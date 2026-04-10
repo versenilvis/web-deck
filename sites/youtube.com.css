@@ -1,7 +1,26 @@
 /* yt-Transparency */
+html[dark],
+html,
+body,
+#container.ytd-searchbox,
+ytd-app,
+#page-header-container,
+#page-header,
+#tabs-container,
+#tabs-inner-container,
+#chips-wrapper,
+.navigation-container,
+#cinematic-shorts-scrim,
+#shorts-container,
+.ytLrGuideResponseMask,
+.ytLrPromoShelfRendererContainer,
+ytd-item-section-renderer[page-subtype="playlist"] #header.ytd-item-section-renderer,
+.ytd-engagement-panel-title-header-renderer,
+.ytd-engagement-panel-section-list-renderer {
+  background-color: #000 !important;
+}
 
-body::-webkit-scrollbar,
-ytd-guide-signin-promo-renderer {
+body::-webkit-scrollbar {
   display: none;
 }
 
@@ -156,6 +175,7 @@ ytd-two-column-browse-results-renderer[page-subtype="playlist"] {
   display: none !important;
 }
 
+
 /* yt-early New To You chip */
 #chips {
   display: flex !important;
@@ -284,6 +304,7 @@ body:has([fullscreen=""], [theater=""]):not(:has(ytd-watch-flexy[hidden=""])) #m
   top: -40px !important;
   opacity: 0 !important;
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+  padding-bottom: 40px !important;
   &:hover {
     opacity: 1 !important;
     top: 0 !important;
