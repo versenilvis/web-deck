@@ -1,0 +1,52 @@
+/* fbm-transparency */
+:root {
+  --web-wash: #00000000 !important;
+  --messenger-card-background: #00000000 !important;
+  --mwp-header-background-color: #00000000 !important;
+  --mwp-message-row-background: #00000000 !important;
+}
+
+.xcrg951 {
+  background-color: #00000000 !important;
+  box-shadow: none !important;
+}
+
+/* chat bubble color */
+[aria-label="Thread composer"] {
+  background-color: var(--mwp-message-row-background) !important;
+}
+
+[aria-label="Inbox switcher"][role="navigation"] {
+  display: none !important;
+}
+
+
+/* Messenger Collapse Sidebar */
+
+[aria-label="Thread list"][role="navigation"] {
+  position: absolute !important;
+  left: 0;
+  top: 20px !important; 
+  bottom: 20px !important;
+  z-index: 999;
+
+  width: 65px !important; /* trigger area */
+  min-width: 15px !important;
+  overflow: hidden !important;
+  
+  opacity: 0;
+  background-color: #191919 !important;
+  
+  transition: width 0.3s ease, opacity 0.2s !important;
+}
+
+[aria-label="Thread list"][role="navigation"]:hover{
+  width: 360px !important;
+  min-width: 360px !important;
+  opacity: 1 !important;
+}
+
+[aria-label="Thread list"][role="navigation"] > div {
+  width: 360px !important;
+  background-color: #191919 !important; 
+}
