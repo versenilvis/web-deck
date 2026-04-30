@@ -1,0 +1,18 @@
+/* www.youtube.com/live_chat */
+
+/* remove welcome to live chat message when you click on a live-stream */
+
+yt-live-chat-viewer-engagement-message-renderer {
+    display: none !important;
+}
+
+yt-live-chat-viewer-engagement-message-renderer.style-scope.yt-live-chat-item-list-renderer {
+    display: none !important;
+    height: 0 !important;
+    visibility: hidden !important;
+}
+
+
+#card.style-scope.yt-live-chat-viewer-engagement-message-renderer {
+    display: none !important;
+}
