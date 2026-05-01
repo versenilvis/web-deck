@@ -20,6 +20,11 @@ ytd-item-section-renderer[page-subtype="playlist"] #header.ytd-item-section-rend
   background-color: #000 !important;
 }
 
+/* block horizontal scroll */
+html, body {
+  overflow-x: hidden !important;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -324,7 +329,7 @@ ytd-app:has([fullscreen=""], [theater=""]):not(:has(ytd-watch-flexy[hidden=""]))
   display: none !important;
 } */
 
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) ytd-comments {
+ytd-watch-flexy[theater] ytd-comments {
     position: fixed !important;
     z-index: 1000 !important;
     top: 3vh !important;
@@ -340,24 +345,27 @@ ytd-app:has([fullscreen=""], [theater=""]):not(:has(ytd-watch-flexy[hidden=""]))
     left: -40em !important;
 }
 
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) ytd-comments:hover {
+ytd-watch-flexy[theater] ytd-comments:hover {
     opacity: 1 !important;
     left: 0 !important;
 }
 
-
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #columns {
+/* Layout for Theater mode */
+ytd-watch-flexy[theater] #columns {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
 }
 
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #primary {
+/* Description and Title */
+ytd-watch-flexy[theater] #primary {
     width: 100% !important;
+    min-width: 0 !important;
     margin: 0 auto !important;
 }
-/* Shows videos under description */
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #secondary {
+
+/* Videos grid layout */
+ytd-watch-flexy[theater] #secondary {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
@@ -365,21 +373,21 @@ ytd-app:has([fullscreen=""], [theater=""]):not(:has(ytd-watch-flexy[hidden=""]))
     box-sizing: border-box !important;
 }
 
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #secondary-inner,
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #related {
+ytd-watch-flexy[theater] #secondary-inner,
+ytd-watch-flexy[theater] #related {
     width: 100% !important;
     max-width: 100% !important;
 }
 
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #secondary #contents.ytd-item-section-renderer {
+ytd-watch-flexy[theater] #secondary #contents.ytd-item-section-renderer {
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
     gap: 20px 16px !important;
     width: 100% !important;
 }
 
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #secondary yt-lockup-view-model .ytLockupViewModelHost,
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #secondary ytd-compact-video-renderer {
+ytd-watch-flexy[theater] #secondary yt-lockup-view-model .ytLockupViewModelHost,
+ytd-watch-flexy[theater] #secondary ytd-compact-video-renderer {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -387,23 +395,23 @@ ytd-app:has([fullscreen=""], [theater=""]):not(:has(ytd-watch-flexy[hidden=""]))
 }
 
 /* Thumbnail full width */
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #secondary .ytLockupViewModelContentImage,
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #secondary ytd-thumbnail.ytd-compact-video-renderer,
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #secondary yt-thumbnail-view-model {
+ytd-watch-flexy[theater] #secondary .ytLockupViewModelContentImage,
+ytd-watch-flexy[theater] #secondary ytd-thumbnail.ytd-compact-video-renderer,
+ytd-watch-flexy[theater] #secondary yt-thumbnail-view-model {
     width: 100% !important;
     max-width: 100% !important;
     margin-right: 0 !important;
     margin-bottom: 12px !important;
 }
 
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #secondary .ytLockupViewModelMetadata {
+ytd-watch-flexy[theater] #secondary .ytLockupViewModelMetadata {
     width: 100% !important;
 }
 ytd-comments {
   transition: all 0.5s ease-in-out !important;
 }
 
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) ytd-comments {
+ytd-watch-flexy[theater] ytd-comments {
   background-color: var(--yt-live-chat-shimmer-background-color) !important;
   backdrop-filter: blur(20px) !important;
   padding: 0 2em !important;
@@ -424,9 +432,9 @@ ytd-comments {
 }
 
 /* yt-zen view comments on left */
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) ytd-comments {
+ytd-watch-flexy[theater] ytd-comments {
   border-radius: 0 2em 2em 0 !important;
-
+  top: 8vh !important;
   left: -40em !important;
   &:hover {
     left: 0 !important;
@@ -434,13 +442,13 @@ ytd-comments {
 }
 
 /* yt-zen comments solid $ Make above Zen View comments background solid instead of blur */
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) ytd-comments {
+ytd-watch-flexy[theater] ytd-comments {
   backdrop-filter: none !important;
   background-color: var(--yt-sys-color-baseline--base-background) !important;
 }
 
 /* yt-transparent overlay chat $ Make the live chat appear as an overlay in theater mode right side edge. */
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #chat {
+ytd-watch-flexy[theater] #chat {
   position: absolute !important;
   height: 800px !important;
   top: 50vh !important;
@@ -448,7 +456,7 @@ ytd-comments {
   opacity: 0.8 !important;
 }
 
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) yt-live-chat-renderer {
+ytd-watch-flexy[theater] yt-live-chat-renderer {
   background: none !important;
   background-color: transparent !important;
 }
