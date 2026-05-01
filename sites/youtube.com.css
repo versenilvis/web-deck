@@ -345,14 +345,18 @@ ytd-app:has([fullscreen=""], [theater=""]):not(:has(ytd-watch-flexy[hidden=""]))
     left: 0 !important;
 }
 
-/* Shows videos under description */
+
 #content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #columns {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
 }
 
-#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #primary,
+#content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #primary {
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+/* Shows videos under description */
 #content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #secondary {
     width: 100% !important;
     max-width: 100% !important;
