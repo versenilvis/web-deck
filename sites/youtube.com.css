@@ -1,4 +1,6 @@
-/* yt-Transparency */
+/* ==========================================
+   yt-Transparency
+   ========================================== */
 html[dark],
 html,
 body,
@@ -20,7 +22,9 @@ ytd-item-section-renderer[page-subtype="playlist"] #header.ytd-item-section-rend
   background-color: #000 !important;
 }
 
-/* block horizontal scroll */
+/* ==========================================
+   block horizontal scroll
+   ========================================== */
 html, body {
   overflow-x: hidden !important;
 }
@@ -56,32 +60,33 @@ ytd-mini-guide-entry-renderer {
   mask-size: cover !important;
 }
 
-/* yt-Toggle side guide $ Completely remove the side guide */
+/* ==========================================
+   yt-Toggle and clean side guide
+   Completely remove the side guide and unwanted sections
+   ========================================== */
 ytd-mini-guide-renderer,
 [theater=""] #contentContainer::after {
   display: none !important;
 }
-tp-yt-app-drawer > #contentContainer:not([opened=""]),
-#contentContainer:not([opened=""]) #guide-content,
+
+tp-yt-app-drawer > #contentContainer,
+#contentContainer #guide-content,
 ytd-mini-guide-renderer,
 ytd-mini-guide-entry-renderer {
-  background-color: var(--yt-spec-text-primary-inverse) !important;
-  background: var(--yt-spec-text-primary-inverse) !important;
-}
-#content:not(:has(#contentContainer[opened=""])) #page-manager {
-  margin-left: 0 !important;
+  &:not([opened=""]) {
+    background-color: var(--yt-spec-text-primary-inverse) !important;
+    background: var(--yt-spec-text-primary-inverse) !important;
+  }
 }
 
 ytd-app:not([guide-persistent-and-visible=""]) tp-yt-app-drawer > #contentContainer {
   background-color: var(--yt-spec-text-primary-inverse) !important;
 }
 
-ytd-alert-with-button-renderer {
-  align-items: center !important;
-  justify-content: center !important;
+#content:not(:has(#contentContainer[opened=""])) #page-manager {
+  margin-left: 0 !important;
 }
 
-/* yt-clean side guide $ Remove YouTube Studio, Sports, Settings and the gfooter from the guide */
 ytd-guide-section-renderer:has([title="YouTube Studio"], [title="Sport"], [title="Settings"]),
 ytd-guide-renderer #footer {
   display: none !important;
@@ -92,7 +97,15 @@ ytd-guide-collapsible-section-entry-renderer {
   border: none !important;
 }
 
-/* yt-mini guide $ A minimal guide with an icon only sidebar similar to the tablet view but more entries */
+ytd-alert-with-button-renderer {
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ==========================================
+   yt-mini guide
+   Minimal guide with an icon only sidebar for tablet-style entries
+   ========================================== */
 body:not(:has([mini-guide-visible=""])) {
   #endpoint.ytd-guide-entry-renderer yt-formatted-string,
   h3.ytd-guide-section-renderer,
@@ -130,6 +143,7 @@ body:not(:has([mini-guide-visible=""])) {
   tp-yt-paper-tabs {
     margin: auto 0 !important;
   }
+
   #page-manager {
     margin-left: calc(var(--ytd-mini-guide-width, 72px) - 20px) !important;
   }
@@ -145,20 +159,16 @@ body:not(:has([mini-guide-visible=""])) {
   }
 }
 
-ytd-alert-with-button-renderer {
-  align-items: center !important;
-  justify-content: center !important;
-}
-
 ytd-two-column-browse-results-renderer[page-subtype="playlist"] {
   width: fit-content !important;
 }
 
-/* yt-Transparent header */
-#masthead-container {
-  #background.ytd-masthead {
-    background-color: #00000000 !important;
-  }
+/* ==========================================
+   yt-Header and Search
+   Transparency and voice search removal
+   ========================================== */
+#masthead-container #background.ytd-masthead {
+  background-color: #00000000 !important;
 }
 
 .ytSearchboxComponentSearchButton {
@@ -166,12 +176,14 @@ ytd-two-column-browse-results-renderer[page-subtype="playlist"] {
   color: var(--yt-live-chat-text-input-field-placeholder-color) !important;
 }
 
-/* yt-no voice search */
 #voice-search-button {
   display: none !important;
 }
 
-/* yt-Hide filter chips $ Hide the chips at the top of the feed homepage if unused */
+/* ==========================================
+   yt-Feed Layout and Chips
+   Homepage chip organization and filter visibility
+   ========================================== */
 #chips-wrapper {
   top: 0 !important;
 }
@@ -180,30 +192,48 @@ ytd-two-column-browse-results-renderer[page-subtype="playlist"] {
   display: none !important;
 }
 
-
-/* yt-early New To You chip */
 #chips {
   display: flex !important;
+
+  & > yt-chip-cloud-chip-renderer:nth-last-child(1) {
+    order: 1 !important;
+    margin-right: 12px !important;
+  }
+
+  & > yt-chip-cloud-chip-renderer:not(:nth-last-child(1)) {
+    order: 2 !important;
+  }
+
+  & > yt-chip-cloud-chip-renderer:nth-child(1) {
+    order: 1 !important;
+  }
 }
 
-#chips > yt-chip-cloud-chip-renderer:nth-last-child(1) {
-  order: 1 !important;
-  margin-right: 12px !important;
-}
-
-#chips > yt-chip-cloud-chip-renderer:not(:nth-last-child(1)) {
-  order: 2 !important;
-}
-
-#chips > yt-chip-cloud-chip-renderer:nth-child(1) {
-  order: 1 !important;
-}
-
-/* yt-Compact feed $ Reduce spacing, Show menu button on hover, inline details */
+/* ==========================================
+   yt-Compact feed and Hover effects
+   Thumbnail animations and grid item spacing
+   ========================================== */
 ytd-rich-item-renderer {
   margin-bottom: 15px !important;
-  [rendered-from-rich-grid] {
+
+  &[rendered-from-rich-grid] {
     --ytd-rich-item-row-usable-width: calc(100% - var(--ytd-rich-grid-gutter-margin) * 1) !important;
+
+    @media only screen and (min-width: 1400px) {
+      --ytd-rich-grid-items-per-row: 4 !important;
+
+      @media only screen and (min-width: 1700px) {
+        --ytd-rich-grid-items-per-row: 5 !important;
+
+        @media only screen and (min-width: 2180px) {
+          --ytd-rich-grid-items-per-row: 6 !important;
+        }
+      }
+    }
+  }
+
+  &[is-in-first-column=""] {
+    margin-left: calc(var(--ytd-rich-grid-item-margin) / 2) !important;
   }
 
   #metadata.ytd-video-meta-block {
@@ -224,12 +254,12 @@ ytd-rich-grid-media {
     opacity: 0 !important;
     transition: opacity 0.3s ease-in-out !important;
   }
-  :hover ytd-menu-renderer #button {
+
+  &:hover ytd-menu-renderer #button {
     opacity: 1 !important;
   }
 }
 
-/* yt-thumbnail hover $ Zoom in the inline thumbnail previews while hovering */
 #inline-preview-player {
   transition: scale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s !important;
   scale: 1 !important;
@@ -240,33 +270,38 @@ ytd-rich-grid-media {
   border-radius: 1.2em !important;
   overflow: hidden !important;
   scale: 1 !important;
+
+  &:hover {
+    scale: 1.25 !important;
+    box-shadow: #0008 0px 0px 60px;
+    transition: scale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2s !important;
+  }
 }
 
-#video-preview-container:has(#inline-preview-player):hover {
-  scale: 1.25 !important;
-  box-shadow: #0008 0px 0px 60px;
-  transition: scale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2s !important;
-}
 ytd-app #content {
   opacity: 1 !important;
   transition: opacity 0.3s ease-in-out !important;
 }
+
 ytd-app:has(#video-preview-container:hover) #content {
   opacity: 0.5 !important;
   transition: opacity 4s ease-in-out 1s !important;
 }
 
-/* yt-no distractions $ No shorts and other obsolete sections in the feed */
-#contents ytd-rich-section-renderer {
-  display: none !important;
-}
-
+/* ==========================================
+   yt-no distractions
+   No shorts and obsolete sections in the feed
+   ========================================== */
+#contents ytd-rich-section-renderer,
 ytd-merch-shelf-renderer,
 .annotation {
   display: none !important;
 }
 
-/* yt-Transparent video background */
+/* ==========================================
+   yt-Player and Watch Page aesthetics
+   Transparency, ambient mode, and shadow removal
+   ========================================== */
 .html5-main-video,
 .html5-video-container,
 #movie_player,
@@ -279,20 +314,19 @@ ytlr-player {
   background-color: #00000000 !important;
 }
 
-#cinematics {
-  display: none !important;
-}
-
-.ytp-gradient-bottom {
-  display: none !important;
-}
-
-/* yt-no ambient mode */
+#cinematics,
 #cinematics-container {
   display: none !important;
 }
 
-/* yt-theater: zen view $ Make the theater view video fit the full window size */
+.ytp-gradient-bottom {
+  display: initial !important;
+}
+
+/* ==========================================
+   yt-theater: zen view
+   Full window theater view and masthead autohide
+   ========================================== */
 #content:has(ytd-masthead[theater=""]) #full-bleed-container {
   height: 100vh !important;
   max-height: 100vh !important;
@@ -309,6 +343,7 @@ body:has([fullscreen=""], [theater=""]):not(:has(ytd-watch-flexy[hidden=""])) #m
   opacity: 0 !important;
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
   padding-bottom: 40px !important;
+
   &:hover {
     opacity: 1 !important;
     top: 0 !important;
@@ -323,153 +358,118 @@ ytd-app:has([fullscreen=""], [theater=""]):not(:has(ytd-watch-flexy[hidden=""]))
   }
 }
 
-/* yt-zen view comments $ In theater mode, move comments to the edge of the video on left or right and show on hover */
-/* #content:has([data-title-no-tooltip="Full screen"]):has([data-title-no-tooltip="Default view"]) #columns #secondary {
-  scale: 0 !important;
-  display: none !important;
-} */
-
-ytd-watch-flexy[theater] ytd-comments {
-    position: fixed !important;
-    z-index: 1000 !important;
-    top: 3vh !important;
-    width: 40em !important;
-    height: 90vh !important;
-    max-height: calc(100vh - 175px) !important;
-    padding: 0 2em !important;
-    opacity: 0 !important;
-    overflow-y: scroll !important;
-    background-color: var(--yt-sys-color-baseline--base-background) !important;
-    backdrop-filter: none !important;
-    border-radius: 0 2em 2em 0 !important;
-    left: -40em !important;
-}
-
-ytd-watch-flexy[theater] ytd-comments:hover {
-    opacity: 1 !important;
-    left: 0 !important;
-}
-
-/* Layout for Theater mode */
-ytd-watch-flexy[theater] #columns {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-}
-
-/* Description and Title */
-ytd-watch-flexy[theater] #primary {
-    width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 auto !important;
-}
-
-/* Videos grid layout */
-ytd-watch-flexy[theater] #secondary {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    padding: 0 24px !important;
-    box-sizing: border-box !important;
-}
-
-ytd-watch-flexy[theater] #secondary-inner,
-ytd-watch-flexy[theater] #related {
-    width: 100% !important;
-    max-width: 100% !important;
-}
-
-ytd-watch-flexy[theater] #secondary #contents.ytd-item-section-renderer {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
-    gap: 20px 16px !important;
-    width: 100% !important;
-}
-
-ytd-watch-flexy[theater] #secondary yt-lockup-view-model .ytLockupViewModelHost,
-ytd-watch-flexy[theater] #secondary ytd-compact-video-renderer {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    width: 100% !important;
-}
-
-/* Thumbnail full width */
-ytd-watch-flexy[theater] #secondary .ytLockupViewModelContentImage,
-ytd-watch-flexy[theater] #secondary ytd-thumbnail.ytd-compact-video-renderer,
-ytd-watch-flexy[theater] #secondary yt-thumbnail-view-model {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-right: 0 !important;
-    margin-bottom: 12px !important;
-}
-
-ytd-watch-flexy[theater] #secondary .ytLockupViewModelMetadata {
-    width: 100% !important;
-}
+/* ==========================================
+   yt-zen view comments
+   Consolidated comments overlay for theater mode
+   ========================================== */
 ytd-comments {
   transition: all 0.5s ease-in-out !important;
 }
 
 ytd-watch-flexy[theater] ytd-comments {
-  background-color: var(--yt-live-chat-shimmer-background-color) !important;
-  backdrop-filter: blur(20px) !important;
-  padding: 0 2em !important;
-  border-radius: 2em 0 0 2em !important;
-  max-height: calc(100vh - 175px) !important;
-  overflow-y: scroll !important;
   position: fixed !important;
   z-index: 1000 !important;
-  top: 3vh !important;
-  right: -42em !important;
-  width: 40em !important;
-  height: 90vh !important;
-  opacity: 0 !important;
-  &:hover {
-    opacity: 1 !important;
-    right: 0 !important;
-  }
-}
-
-/* yt-zen view comments on left */
-ytd-watch-flexy[theater] ytd-comments {
-  border-radius: 0 2em 2em 0 !important;
   top: 8vh !important;
   left: -40em !important;
+  width: 40em !important;
+  height: 90vh !important;
+  max-height: calc(100vh - 175px) !important;
+  padding: 0 2em !important;
+  opacity: 0 !important;
+  overflow-y: scroll !important;
+  background-color: var(--yt-sys-color-baseline--base-background) !important;
+  backdrop-filter: none !important;
+  border-radius: 0 2em 2em 0 !important;
+
   &:hover {
+    opacity: 1 !important;
     left: 0 !important;
   }
 }
 
-/* yt-zen comments solid $ Make above Zen View comments background solid instead of blur */
-ytd-watch-flexy[theater] ytd-comments {
-  backdrop-filter: none !important;
-  background-color: var(--yt-sys-color-baseline--base-background) !important;
-}
+/* ==========================================
+   Theater mode Layout
+   Consolidated column and grid adjustments
+   ========================================== */
+ytd-watch-flexy[theater] {
+  #columns {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
 
-/* yt-transparent overlay chat $ Make the live chat appear as an overlay in theater mode right side edge. */
-ytd-watch-flexy[theater] #chat {
-  position: absolute !important;
-  height: 800px !important;
-  top: 50vh !important;
-  transform: translateY(-50%) !important;
-  opacity: 0.8 !important;
-}
+  #primary {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+  }
 
-ytd-watch-flexy[theater] yt-live-chat-renderer {
-  background: none !important;
-  background-color: transparent !important;
+  #secondary {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+
+    #contents.ytd-item-section-renderer {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+      gap: 20px 16px !important;
+      width: 100% !important;
+    }
+
+    yt-lockup-view-model .ytLockupViewModelHost,
+    ytd-compact-video-renderer {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+    }
+
+    .ytLockupViewModelContentImage,
+    ytd-thumbnail.ytd-compact-video-renderer,
+    yt-thumbnail-view-model {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-right: 0 !important;
+      margin-bottom: 12px !important;
+    }
+
+    .ytLockupViewModelMetadata {
+      width: 100% !important;
+    }
+  }
+
+  #secondary-inner,
+  #related {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #chat {
+    position: absolute !important;
+    height: 800px !important;
+    top: 50vh !important;
+    transform: translateY(-50%) !important;
+    opacity: 0.8 !important;
+  }
+
+  yt-live-chat-renderer {
+    background: none !important;
+    background-color: transparent !important;
+  }
 }
 
 #content:has([data-title-no-tooltip="Exit full screen"]) ytd-live-chat-frame {
   background-color: var(--app-drawer-content-container-background-color) !important;
 }
 
-/* yt-Misc */
-#content #dismissible:hover {
-  ytd-video-meta-block {
-    opacity: 1 !important;
-  }
+/* ==========================================
+   yt-Misc and Addons
+   Third-party integration and miscellaneous tweaks
+   ========================================== */
+#content #dismissible:hover ytd-video-meta-block {
+  opacity: 1 !important;
 }
 
 #content:has(ytd-masthead[theater=""]:not([fullscreen=""])) #panels-full-bleed-container {
@@ -484,7 +484,6 @@ ytd-two-column-browse-results-renderer:has(.ytd-playlist-video-renderer) {
   display: none !important;
 }
 
-/* yt-better captions $ Caption background has blur */
 .caption-window {
   backdrop-filter: blur(10px) brightness(70%) !important;
   border-radius: 1em !important;
@@ -497,31 +496,10 @@ ytd-two-column-browse-results-renderer:has(.ytd-playlist-video-renderer) {
   background: none !important;
 }
 
-/* yt-Keep player shadow $ Remove the shadow around the player when disabled */
-.ytp-gradient-bottom {
-  display: initial !important;
-}
-
-/* yt-fix new feed layout $ Revert the new ugly feed layout that barely fits 3 columns of videos */
-ytd-rich-item-renderer[rendered-from-rich-grid] {
-  @media only screen and (min-width: 1400px) {
-    --ytd-rich-grid-items-per-row: 4 !important;
-
-    @media only screen and (min-width: 1700px) {
-      --ytd-rich-grid-items-per-row: 5 !important;
-
-      @media only screen and (min-width: 2180px) {
-        --ytd-rich-grid-items-per-row: 6 !important;
-      }
-    }
-  }
-}
-
-ytd-rich-item-renderer[is-in-first-column=""] {
-  margin-left: calc(var(--ytd-rich-grid-item-margin) / 2) !important;
-}
-
-/* yt-Immersive search $ Smooth blur and zoom effect for searhbar */
+/* ==========================================
+   yt-Immersive search
+   Smooth blur and zoom effects for the searchbar
+   ========================================== */
 #page-manager,
 yt-searchbox {
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.35) !important;
@@ -539,7 +517,6 @@ yt-searchbox:has(.ytSearchboxComponentInputBoxHasFocus) {
   position: relative !important;
   left: 0vw !important;
   top: -30vh !important;
-
   height: 40px !important;
   max-width: 600px !important;
   scale: 1 !important;
@@ -584,20 +561,21 @@ yt-searchbox:has(.ytSearchboxComponentInputBoxHasFocus) {
   scale: 1.05 !important;
 }
 
-/* yt-Addon : Viewstats */
-.card {
+/* ==========================================
+   yt-Addons: Viewstats and Timestamps
+   ========================================== */
+.card,
+.vs-btn {
   background: var(--yt-spec-badge-chip-background) !important;
 }
 
 .vs-btn {
-  background: var(--yt-spec-badge-chip-background) !important;
   color: var(--yt-spec-text-primary-inverse) !important;
   border-radius: 1em !important;
   padding: 0.5em 1em !important;
   margin: 0.5em !important;
 }
 
-/* yt-Addon : timed comments */
 .__youtube-timestamps__stamp {
   scale: 3 !important;
   border-radius: 1.5px !important;
@@ -612,6 +590,7 @@ yt-searchbox:has(.ytSearchboxComponentInputBoxHasFocus) {
 .__youtube-timestamps__preview-wrapper {
   scale: 1.2 !important;
   transform: translateX(16%) !important;
+
   .__youtube-timestamps__preview {
     border-radius: 1em !important;
     backdrop-filter: blur(20px) !important;
@@ -659,7 +638,10 @@ yt-searchbox:has(.ytSearchboxComponentInputBoxHasFocus) {
   }
 }
 
-/* yt-YT TV $ YouTube TV player modifications */
+/* ==========================================
+   yt-YT TV and Player Blur
+   YouTube TV modifications and player control effects
+   ========================================== */
 .ytLrWatchDefaultControlsBackground,
 ytlr-watch-metadata,
 .ytVirtualListItem:not(.ytVirtualListItemSelected) ytlr-comment-renderer,
@@ -686,7 +668,6 @@ ytlr-compact-link-renderer {
   font-size: 0.7em !important;
 }
 
-/* yt-New player blur */
 .ytp-left-controls {
   .ytp-play-button,
   .ytp-volume-area,
@@ -709,3 +690,4 @@ ytlr-compact-link-renderer {
   backdrop-filter: blur(10px) !important;
   background-color: #0007 !important;
 }
+
