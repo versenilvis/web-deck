@@ -324,7 +324,7 @@ ytlr-player {
 }
 
 /* ==========================================
-   yt-theater: zen view
+   yt-theater: full window
    Full window theater view and masthead autohide
    ========================================== */
 #content:has(ytd-masthead[theater=""]) #full-bleed-container {
@@ -359,7 +359,7 @@ ytd-app:has([fullscreen=""], [theater=""]):not(:has(ytd-watch-flexy[hidden=""]))
 }
 
 /* ==========================================
-   yt-zen view comments
+   yt-theater comments
    Consolidated comments overlay for theater mode
    ========================================== */
 ytd-comments {
@@ -405,6 +405,7 @@ ytd-watch-flexy[theater] {
     margin: 0 auto !important;
   }
 
+  /* Videos under description */
   #secondary {
     width: 100% !important;
     max-width: 100% !important;
