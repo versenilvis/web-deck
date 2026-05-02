@@ -381,7 +381,8 @@ ytd-watch-flexy[theater] ytd-comments {
   backdrop-filter: none !important;
   border-radius: 0 2em 2em 0 !important;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     opacity: 1 !important;
     left: 0 !important;
   }
