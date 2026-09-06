@@ -1,0 +1,47 @@
+/* hardware acceleration for video player */
+#ytd-player,
+#movie_player,
+.html5-video-player,
+.html5-main-video {
+  transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
+  will-change: transform !important;
+}
+
+/* defer rendering of below-the-fold content until scrolled into view */
+#secondary #related,
+#secondary #items,
+#secondary #contents,
+#below #comments,
+ytd-comments#comments,
+ytd-playlist-panel-renderer #items,
+ytd-item-section-renderer[page-subtype="playlist"] #contents {
+  content-visibility: auto !important;
+  contain-intrinsic-size: 50rem !important;
+}
+
+/* isolate and disable layout computation for off-screen elements in fullscreen */
+:fullscreen #masthead-container,
+:fullscreen #columns #secondary,
+:fullscreen #below,
+:fullscreen #comments,
+:fullscreen ytd-playlist-panel-renderer,
+ytd-watch-flexy[fullscreen] #columns #secondary,
+ytd-watch-flexy[fullscreen] #below,
+ytd-watch-flexy[fullscreen] #comments,
+ytd-watch-grid[fullscreen] #columns #secondary,
+ytd-watch-grid[fullscreen] #below,
+ytd-watch-grid[fullscreen] #comments {
+  contain: strict !important;
+  content-visibility: hidden !important;
+}
+
+/* disable any lingering transitions during fullscreen toggle for instant 60fps */
+html.cb-fullscreen-toggling *,
+body.cb-fullscreen-toggling * {
+  transition: none !important;
+}
+
+#page-manager {
+  contain: layout style !important;
+}

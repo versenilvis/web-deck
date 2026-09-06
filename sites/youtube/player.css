@@ -1,0 +1,42 @@
+.ytLrWatchDefaultControlsBackground,
+ytlr-watch-metadata,
+.ytVirtualListItem:not(.ytVirtualListItemSelected) ytlr-comment-renderer,
+.ytLrChannelHeaderRendererMetadata,
+ytlr-surface-page::before {
+  background-color: #fff7 !important;
+  backdrop-filter: blur(1rem) !important;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #0007 !important;
+  }
+}
+
+.ytLrWatchDefaultControlsBackground {
+  width: 80rem !important;
+  transform: translateX(-50%) !important;
+  left: 50% !important;
+  border-radius: 1em 1em 0 0 !important;
+}
+
+.ytLrAnimatedOverlayContainer,
+ytlr-compact-link-renderer {
+  background-color: transparent !important;
+  font-size: 0.7em !important;
+}
+
+.ytp-left-controls,
+.ytp-left-controls *,
+.ytp-right-controls,
+.ytp-right-controls *,
+.ytp-time-wrapper,
+.ytp-time-display.notranslate > span,
+.ytp-chapter-container > button {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.ytp-popup {
+  background-color: rgba(15, 15, 15, 0.92) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}

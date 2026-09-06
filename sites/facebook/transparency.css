@@ -1,7 +1,5 @@
-/* fb-transparency */
 :root {
   --web-wash: #00000000 !important;
-  /* --nav-bar-background: #00000000 !important; */
 }
 
 body,
@@ -14,10 +12,9 @@ body,
     box-shadow 0.5s ease-in-out !important;
 }
 
-/* fb-other changes */
-div.xdg88n9, /* pencil button */
-div[aria-label="Menu"][role="button"], /* menu button */
-ul.xuk3077.x78zum5.x1iyjqo2.xl56j7k.xe11lzi.x1vy8oqc.x88anuq, /* navbar menu */
+div.xdg88n9,
+div[aria-label="Menu"][role="button"],
+ul.xuk3077.x78zum5.x1iyjqo2.xl56j7k.xe11lzi.x1vy8oqc.x88anuq,
 div.xnp8db0:nth-child(1),
 div.xnp8db0:nth-child(4) {
   opacity: 0 !important;

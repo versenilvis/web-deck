@@ -1,0 +1,37 @@
+#masthead-container #background.ytd-masthead {
+  background-color: #00000000 !important;
+}
+
+.ytSearchboxComponentSearchButton {
+  background-color: var(--yt-spec-text-primary-inverse) !important;
+  color: var(--yt-live-chat-text-input-field-placeholder-color) !important;
+}
+
+#voice-search-button {
+  display: none !important;
+}
+
+#chips-wrapper {
+  top: 0 !important;
+}
+
+[page-subtype="home"] .ytd-two-column-browse-results-renderer #header {
+  display: none !important;
+}
+
+#chips {
+  display: flex !important;
+
+  & > yt-chip-cloud-chip-renderer:nth-last-child(1) {
+    order: 1 !important;
+    margin-right: 0.75rem !important;
+  }
+
+  & > yt-chip-cloud-chip-renderer:not(:nth-last-child(1)) {
+    order: 2 !important;
+  }
+
+  & > yt-chip-cloud-chip-renderer:nth-child(1) {
+    order: 1 !important;
+  }
+}

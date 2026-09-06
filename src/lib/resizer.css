@@ -1,0 +1,208 @@
+.cb-resizer-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100000;
+  border-radius: 0.75rem;
+}
+
+.cb-handle {
+  position: absolute;
+  pointer-events: auto;
+  background: transparent;
+}
+
+/* drag handle across top bar */
+.cb-drag-handle {
+  top: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2.4rem;
+  cursor: grab;
+  z-index: 100003;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0.375rem;
+}
+
+.cb-drag-handle:active {
+  cursor: grabbing;
+}
+
+.cb-drag-bar-pill {
+  width: 2.25rem;
+  height: 0.25rem;
+  border-radius: 0.125rem;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+#chat:hover .cb-drag-bar-pill,
+.cb-resizer-container:hover .cb-drag-bar-pill,
+body.cb-moving-active .cb-drag-bar-pill {
+  opacity: 1;
+}
+
+.cb-drag-handle:hover .cb-drag-bar-pill {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* west edge resize handle */
+.cb-handle-w {
+  top: 0.875rem;
+  bottom: 0.875rem;
+  left: -0.7rem;
+  width: 1.4rem;
+  cursor: ew-resize;
+  z-index: 100005;
+}
+
+/* east edge resize handle */
+.cb-handle-e {
+  top: 0.875rem;
+  bottom: 0.875rem;
+  right: -0.7rem;
+  width: 1.4rem;
+  cursor: ew-resize;
+  z-index: 100005;
+}
+
+/* north edge resize handle */
+.cb-handle-n {
+  left: 1rem;
+  right: 1rem;
+  top: -0.7rem;
+  height: 1.4rem;
+  cursor: ns-resize;
+  z-index: 100005;
+}
+
+/* south edge resize handle */
+.cb-handle-s {
+  left: 1rem;
+  right: 1rem;
+  bottom: -0.7rem;
+  height: 1.4rem;
+  cursor: ns-resize;
+  z-index: 100005;
+}
+
+/* top-west corner resize handle */
+.cb-handle-nw {
+  top: -0.75rem;
+  left: -0.75rem;
+  width: 1.625rem;
+  height: 1.625rem;
+  cursor: nwse-resize;
+  z-index: 100006;
+}
+
+/* top-east corner resize handle */
+.cb-handle-ne {
+  top: -0.75rem;
+  right: -0.75rem;
+  width: 1.625rem;
+  height: 1.625rem;
+  cursor: nesw-resize;
+  z-index: 100006;
+}
+
+/* bottom-west corner resize handle */
+.cb-handle-sw {
+  bottom: -0.75rem;
+  left: -0.75rem;
+  width: 1.625rem;
+  height: 1.625rem;
+  cursor: nesw-resize;
+  z-index: 100006;
+}
+
+/* bottom-east corner resize handle */
+.cb-handle-se {
+  bottom: -0.75rem;
+  right: -0.75rem;
+  width: 1.625rem;
+  height: 1.625rem;
+  cursor: nwse-resize;
+  z-index: 100006;
+}
+
+/* visual corner brackets indicating scalable corners on hover */
+.cb-handle-nw::after,
+.cb-handle-ne::after,
+.cb-handle-sw::after,
+.cb-handle-se::after {
+  content: '';
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  opacity: 0;
+  border-color: rgba(255, 255, 255, 0.4);
+  border-style: solid;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+#chat:hover .cb-handle-nw::after,
+#chat:hover .cb-handle-ne::after,
+#chat:hover .cb-handle-sw::after,
+#chat:hover .cb-handle-se::after,
+.cb-resizer-container:hover .cb-handle-nw::after,
+.cb-resizer-container:hover .cb-handle-ne::after,
+.cb-resizer-container:hover .cb-handle-sw::after,
+.cb-resizer-container:hover .cb-handle-se::after,
+body.cb-resizing-active .cb-handle-nw::after,
+body.cb-resizing-active .cb-handle-ne::after,
+body.cb-resizing-active .cb-handle-sw::after,
+body.cb-resizing-active .cb-handle-se::after {
+  opacity: 1;
+}
+
+.cb-handle-nw:hover::after,
+.cb-handle-ne:hover::after,
+.cb-handle-sw:hover::after,
+.cb-handle-se:hover::after {
+  border-color: #38bdf8;
+}
+
+.cb-handle-nw::after {
+  top: 0.625rem;
+  left: 0.625rem;
+  border-width: 0.125rem 0 0 0.125rem;
+  border-top-left-radius: 0.25rem;
+}
+
+.cb-handle-ne::after {
+  top: 0.625rem;
+  right: 0.625rem;
+  border-width: 0.125rem 0.125rem 0 0;
+  border-top-right-radius: 0.25rem;
+}
+
+.cb-handle-sw::after {
+  bottom: 0.625rem;
+  left: 0.625rem;
+  border-width: 0 0 0.125rem 0.125rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.cb-handle-se::after {
+  bottom: 0.625rem;
+  right: 0.625rem;
+  border-width: 0 0.125rem 0.125rem 0;
+  border-bottom-right-radius: 0.25rem;
+}
+
+body.cb-resizing-active,
+body.cb-moving-active {
+  user-select: none !important;
+}
+
+body.cb-resizing-active * {
+  cursor: inherit !important;
+}
+
+body.cb-moving-active * {
+  cursor: grabbing !important;
+}

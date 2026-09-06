@@ -1,0 +1,31 @@
+# dependencies
+node_modules/
+
+# build outputs
+.output/
+.wxt/
+dist/
+
+# local env
+*.local
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+
+# editor files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.sw?
+
+# os files
+.DS_Store
+Thumbs.db
+
+# temp
+scratch/
+*.tmp
+*.tsbuildinfo

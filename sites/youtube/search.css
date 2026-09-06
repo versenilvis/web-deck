@@ -1,0 +1,60 @@
+#page-manager,
+yt-searchbox {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.35) !important;
+}
+
+#masthead yt-searchbox button[aria-label="Search"] {
+  display: none !important;
+}
+
+.ytSearchboxComponentInputBox {
+  border-radius: 2em !important;
+}
+
+yt-searchbox:has(.ytSearchboxComponentInputBoxHasFocus) {
+  position: relative !important;
+  left: 0vw !important;
+  top: -30vh !important;
+  height: 2.5rem !important;
+  max-width: 37.5rem !important;
+  scale: 1 !important;
+
+  @media only screen and (min-width: 87.5rem) {
+    height: 3.75rem !important;
+    max-width: 43.75rem !important;
+    scale: 1.1 !important;
+  }
+
+  .ytSearchboxComponentInputBox,
+  #i0 {
+    background-color: #fffb !important;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: #000b !important;
+    }
+
+    box-shadow: black 0 0 1.875rem !important;
+  }
+
+  #i0 {
+    margin-top: 0.625rem !important;
+
+    @media only screen and (min-width: 87.5rem) {
+      margin-top: 1.875rem !important;
+    }
+  }
+}
+
+.ytd-masthead #center:has(.ytSearchboxComponentInputBoxHasFocus) {
+  height: 100vh !important;
+  width: 100vw !important;
+  left: 0 !important;
+  top: 0 !important;
+  position: fixed !important;
+  justify-content: center !important;
+}
+
+#content:has(.ytSearchboxComponentInputBoxHasFocus) #page-manager {
+  filter: blur(1.25rem) !important;
+  scale: 1.05 !important;
+}

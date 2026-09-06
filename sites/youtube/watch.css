@@ -1,0 +1,114 @@
+.html5-main-video,
+.html5-video-container,
+#movie_player,
+#container,
+#ytd-player,
+#player-container,
+#player-full-bleed-container,
+#full-bleed-container,
+ytlr-player {
+  background-color: #00000000 !important;
+}
+
+#cinematics,
+#cinematics-container {
+  display: none !important;
+}
+
+.ytp-gradient-bottom {
+  display: initial !important;
+}
+
+ytd-two-column-browse-results-renderer:has(.ytd-playlist-video-renderer) {
+  margin-left: 6.25rem !important;
+}
+
+#content #dismissible:hover ytd-video-meta-block {
+  opacity: 1 !important;
+}
+
+.caption-window {
+  backdrop-filter: blur(0.625rem) brightness(70%) !important;
+  border-radius: 1em !important;
+  padding: 1em !important;
+  box-shadow: #0008 0 0 1.25rem !important;
+  width: fit-content !important;
+}
+
+.ytp-caption-segment {
+  background: none !important;
+}
+
+.card,
+.vs-btn {
+  background: var(--yt-spec-badge-chip-background) !important;
+}
+
+.vs-btn {
+  color: var(--yt-spec-text-primary-inverse) !important;
+  border-radius: 1em !important;
+  padding: 0.5em 1em !important;
+  margin: 0.5em !important;
+}
+
+.__youtube-timestamps__stamp {
+  scale: 3 !important;
+  border-radius: 0.1rem !important;
+  transition: all 0.3s ease-in-out !important;
+  z-index: 10000000000000 !important;
+
+  &:hover {
+    scale: 5 !important;
+  }
+}
+
+.__youtube-timestamps__preview-wrapper {
+  scale: 1.2 !important;
+  transform: translateX(16%) !important;
+
+  .__youtube-timestamps__preview {
+    border-radius: 1em !important;
+    backdrop-filter: blur(1.25rem) !important;
+    background-color: #000000bb !important;
+    border: solid 0.125rem gray !important;
+
+    .__youtube-timestamps__preview__avatar {
+      height: 2.5em !important;
+      width: 2.5em !important;
+      border-radius: 0.5em !important;
+    }
+
+    .__youtube-timestamps__preview__text-stamp {
+      background-color: #ffaaaa !important;
+      padding: 0.1em 0.3em !important;
+      border-radius: 0.5em !important;
+      color: #000 !important;
+    }
+
+    .__youtube-timestamps__preview__name,
+    .__youtube-timestamps__preview__text {
+      color: #ffffff !important;
+    }
+  }
+}
+
+.comments-container {
+  div.wrapper {
+    background-color: transparent !important;
+  }
+
+  div.clickable-comment,
+  div.replies {
+    background-color: rgba(18, 18, 18, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+    border-radius: 1em !important;
+    max-width: 40em !important;
+    transition: all 0.4s ease-in-out !important;
+
+    .likes-and-replies {
+      opacity: 0.3 !important;
+    }
+  }
+}

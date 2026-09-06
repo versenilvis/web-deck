@@ -1,0 +1,156 @@
+/* youtube live chat transparency and container layout */
+:root,
+html,
+body,
+[dark],
+yt-live-chat-app,
+yt-live-chat-renderer,
+yt-live-chat-item-list-renderer,
+#item-scroller,
+#item-list,
+#items,
+#contents,
+#chat,
+#panel-pages,
+#input-container,
+yt-live-chat-header-renderer,
+yt-live-chat-message-input-renderer,
+yt-live-chat-ticker-renderer,
+yt-live-chat-ticker-sponsor-item-renderer,
+#primary-content,
+#header,
+#action-panel,
+#card,
+#content,
+#container,
+tp-yt-paper-listbox,
+tp-yt-paper-item,
+yt-live-chat-author-chip,
+yt-live-chat-author-badge-renderer,
+yt-live-chat-text-message-renderer,
+yt-live-chat-paid-message-renderer,
+yt-live-chat-membership-item-renderer,
+yt-live-chat-paid-sticker-renderer,
+yt-live-chat-mode-change-message-renderer,
+yt-live-chat-viewer-engagement-message-renderer,
+#separator,
+#top-bar {
+  --yt-live-chat-background-color: transparent !important;
+  --yt-spec-base-background: transparent !important;
+  --yt-spec-raised-background: transparent !important;
+  --yt-spec-menu-background: transparent !important;
+  --yt-live-chat-action-panel-background-color: transparent !important;
+  --yt-live-chat-secondary-background-color: transparent !important;
+  --yt-live-chat-toast-background-color: transparent !important;
+  --yt-live-chat-mode-change-title-background-color: transparent !important;
+  --yt-spec-general-background-a: transparent !important;
+  --yt-spec-general-background-b: transparent !important;
+  --yt-live-chat-shimmer-background-color: transparent !important;
+  --yt-emoji-picker-category-background-color: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html {
+  zoom: var(--cb-yt-chat-scale, 1);
+}
+
+html,
+body {
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+yt-live-chat-app {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+yt-live-chat-renderer {
+  height: 100% !important;
+  max-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  min-height: 0 !important;
+}
+
+yt-live-chat-item-list-renderer {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+#item-scroller {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+#item-list {
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#items {
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  flex: 1 1 auto !important;
+}
+
+::-webkit-scrollbar {
+  width: 0.25rem !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 0.25rem !important;
+}
+
+yt-live-chat-viewer-engagement-message-renderer,
+yt-live-chat-banner-manager,
+#card.style-scope.yt-live-chat-viewer-engagement-message-renderer {
+  display: none !important;
+  height: 0 !important;
+}
+
+/* hide chat top header if option enabled */
+html.cb-hide-chat-header #chat-messages > yt-live-chat-header-renderer,
+html.cb-hide-chat-header yt-live-chat-header-renderer,
+html.cb-hide-chat-header #header.yt-live-chat-renderer {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* hide chat bottom input panel if option enabled */
+html.cb-hide-chat-input #input-panel,
+html.cb-hide-chat-input #input-container,
+html.cb-hide-chat-input yt-live-chat-message-input-renderer,
+html.cb-hide-chat-input #input.yt-live-chat-renderer {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}

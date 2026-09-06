@@ -1,0 +1,94 @@
+ytd-mini-guide-renderer,
+[theater=""] #contentContainer::after {
+  display: none !important;
+}
+
+tp-yt-app-drawer > #contentContainer,
+#contentContainer #guide-content,
+ytd-mini-guide-renderer,
+ytd-mini-guide-entry-renderer {
+  &:not([opened=""]) {
+    background-color: var(--yt-spec-text-primary-inverse) !important;
+    background: var(--yt-spec-text-primary-inverse) !important;
+  }
+}
+
+ytd-app:not([guide-persistent-and-visible=""]) tp-yt-app-drawer > #contentContainer {
+  background-color: var(--yt-spec-text-primary-inverse) !important;
+}
+
+#content:not(:has(#contentContainer[opened=""])) #page-manager {
+  margin-left: 0 !important;
+}
+
+ytd-guide-section-renderer:has([title="YouTube Studio"], [title="Sport"], [title="Settings"]),
+ytd-guide-renderer #footer {
+  display: none !important;
+}
+
+ytd-guide-section-renderer,
+ytd-guide-collapsible-section-entry-renderer {
+  border: none !important;
+}
+
+ytd-alert-with-button-renderer {
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body:not(:has([mini-guide-visible=""])) {
+  #endpoint.ytd-guide-entry-renderer yt-formatted-string,
+  h3.ytd-guide-section-renderer,
+  #newness-dot,
+  tp-yt-paper-item:not(:hover) yt-icon.guide-entry-badge {
+    display: none !important;
+  }
+
+  #endpoint.ytd-guide-entry-renderer,
+  ytd-guide-entry-renderer,
+  ytd-guide-collapsible-section-entry-renderer,
+  .ytd-guide-section-renderer,
+  ytd-guide-section-renderer,
+  ytd-guide-renderer > #sections,
+  ytd-guide-renderer,
+  #guide-inner-content,
+  #guide-content,
+  #guide-wrapper,
+  tp-yt-app-drawer,
+  #tabsContent,
+  yt-tab-group-shape,
+  yt-tab-group-shape > [role="tablist"] {
+    width: fit-content !important;
+  }
+
+  tp-yt-paper-item {
+    padding: 0.125rem 0.625rem !important;
+  }
+
+  yt-icon.ytd-guide-entry-renderer,
+  yt-img-shadow.ytd-guide-entry-renderer {
+    margin: 0 !important;
+  }
+
+  tp-yt-paper-tabs {
+    margin: auto 0 !important;
+  }
+
+  #page-manager {
+    margin-left: calc(var(--ytd-mini-guide-width, 4.5rem) - 1.25rem) !important;
+  }
+
+  #tabsContainer.tp-yt-paper-tabs {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  ytd-app:not([guide-persistent-and-visible=""]) tp-yt-app-drawer > #contentContainer {
+    background: transparent !important;
+  }
+}
+
+ytd-two-column-browse-results-renderer[page-subtype="playlist"] {
+  width: fit-content !important;
+}

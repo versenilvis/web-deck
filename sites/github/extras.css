@@ -1,0 +1,26 @@
+.application-main {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.35) !important;
+}
+
+body:has(header > .search-expanded) .application-main {
+  filter: blur(1.25rem) !important;
+  scale: 1.05 !important;
+}
+
+.AppHeader .AppHeader-globalBar .AppHeader-actions::before {
+  display: none !important;
+}
+
+.OverviewContent-module__Button--MDoYP {
+  margin-right: 0.5rem !important;
+}
+
+#global-copilot-menu-button {
+  margin-left: 0.5rem !important;
+}
+
+
+#fork-button,
+.BtnGroup-parent {
+  margin-right: 0.2rem !important;
+}

@@ -1,0 +1,34 @@
+.r-1gn8etr {
+  position: sticky !important;
+  top: -3.125rem !important;
+}
+
+#react-root > div > div > div.css-g5y9jx.r-1f2l425.r-13qz1uu.r-417010.r-18u37iz > header > div > div > div,
+#react-root > div > div > div.css-g5y9jx.r-1f2l425.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div.css-g5y9jx.r-aqfbo4.r-1l8l4mf.r-1hycxz > div > div.css-g5y9jx.r-1hycxz.r-gtdqiz > div > div > div,
+#react-root > div > div > div.css-g5y9jx.r-1f2l425.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div.css-g5y9jx.r-aqfbo4.r-1l8l4mf.r-1hycxz > div > div.css-g5y9jx.r-1hycxz.r-1xcajam > div > div > div,
+#react-root > div > div > div.css-g5y9jx.r-1f2l425.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div.css-g5y9jx.r-aqfbo4.r-10f7w94.r-1hycxz {
+  opacity: 0 !important;
+  transition: all 0.3s ease-in-out !important;
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+[aria-label="Subscribe to Premium"],
+[aria-label="Footer"],
+[data-testid="super-upsell-UpsellCardRenderProperties"] {
+  display: none !important;
+}
+
+#layers > div > div:nth-child(1) > div > div > button,
+[data-testid="chat-drawer-main"] {
+  opacity: 0 !important;
+  transition: all 0.3s ease-in-out !important;
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+div.r-5zmot nav div.r-1adg3ll > div {
+  display: none !important;
+}

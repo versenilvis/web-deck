@@ -1,0 +1,55 @@
+html[dark],
+html,
+body,
+#container.ytd-searchbox,
+ytd-app,
+#page-header-container,
+#page-header,
+#tabs-container,
+#tabs-inner-container,
+#chips-wrapper,
+.navigation-container,
+#cinematic-shorts-scrim,
+#shorts-container,
+.ytLrGuideResponseMask,
+.ytLrPromoShelfRendererContainer,
+ytd-item-section-renderer[page-subtype="playlist"] #header.ytd-item-section-renderer,
+.ytd-engagement-panel-title-header-renderer,
+.ytd-engagement-panel-section-list-renderer {
+  background-color: #000 !important;
+}
+
+html, body {
+  overflow-x: hidden !important;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#tabs-divider,
+#short-video-container #cinematic-container,
+#frosted-glass {
+  display: none !important;
+}
+
+#shorts-container {
+  height: 98vh !important;
+}
+
+tp-yt-app-drawer > #contentContainer,
+#guide-content,
+ytd-mini-guide-renderer,
+ytd-mini-guide-entry-renderer {
+  background-color: #00000000 !important;
+  background: none !important;
+}
+
+.ytLrPromoShelfRendererPreviewBackground {
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%) !important;
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%) !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-size: cover !important;
+  mask-size: cover !important;
+}

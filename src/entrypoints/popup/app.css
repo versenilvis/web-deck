@@ -1,0 +1,75 @@
+:root {
+  --bg-primary: #000000;
+  --bg-card: #111113;
+  --bg-card-hover: #17171a;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --text-primary: #ffffff;
+  --text-secondary: #8e8e93;
+  --text-tertiary: #636366;
+  --apple-green: #30d158;
+  --apple-blue: #2997ff;
+  --apple-switch-off: rgba(120, 120, 128, 0.32);
+  --apple-segment-bg: #1c1c1e;
+  --apple-segment-active: #2c2c2e;
+  --radius-sm: 0.65rem;
+  --radius-md: 0.85rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+}
+
+html {
+  font-size: 14px;
+}
+
+/* adapt root font-size for compact laptops or ultrawide monitors */
+@media (max-height: 680px), (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body {
+  width: 27.5rem;
+  min-width: 26rem;
+  min-height: 28rem;
+  max-height: 38.5rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* hide scrollbar completely across all elements */
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  color: inherit;
+}

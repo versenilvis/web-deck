@@ -1,0 +1,14 @@
+[default.extend-words]
+iz = "iz"
+Eis = "Eis"
+tikcer = "tikcer"
+theature = "theature"
+uneccessary = "uneccessary"
+
+[files]
+extend-exclude = [
+    ".output",
+    ".wxt",
+    "bun.lock",
+    "CHANGELOG.md",
+]
