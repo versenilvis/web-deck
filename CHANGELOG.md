@@ -2,6 +2,25 @@
 
 All notable changes to this project are documented in this file.
 
+## [v0.1.1](https://github.com/versenilvis/web-deck/releases/tag/v0.1.1) - 2026-09-07
+
+### Bug fixes
+
+- Prevent sticky black bar on channel scroll ([a8a2aa](https://github.com/versenilvis/web-deck/commit/a8a2aa771ba780643fc76b330421c782649d0619))
+- Add side margins to watch description ([1ed61b](https://github.com/versenilvis/web-deck/commit/1ed61b01f27f55fa2c8f132826bff4e3ec485e37))
+- Limit related videos to max 5 per row ([5cc0c6](https://github.com/versenilvis/web-deck/commit/5cc0c6a795b99b902a49338eecaf7d3e1949137a))
+- Restore player controls and timeline pointer cursor ([2994db](https://github.com/versenilvis/web-deck/commit/2994db3aa441899e1b0bcac8c0bd3dd88e73a633))
+- Purge stale cached youtube styles on load ([4f4c75](https://github.com/versenilvis/web-deck/commit/4f4c75ef9194966b69163fba4dab14b39d0de04a))
+- Keep autoUpdate true for users while purging local cache on load ([101380](https://github.com/versenilvis/web-deck/commit/101380bb4b68d3238a73d34e64997bf33f22c02f))
+- Remove custom styles affecting channel profile header ([7a1ce0](https://github.com/versenilvis/web-deck/commit/7a1ce0a9840f3c53098668315d140fa39f9de1c1))
+- Restore original primary layout under video ([f1b11d](https://github.com/versenilvis/web-deck/commit/f1b11da142585a3506411379f46ff0eead1d1492))
+- Remove automatic background sync on boot ([4d9d41](https://github.com/versenilvis/web-deck/commit/4d9d41077338f628489f9ae2a863482cae57b1fd))
+- Center primary in theater mode and improve chat drag handles ([964f4a](https://github.com/versenilvis/web-deck/commit/964f4a3c0f4887f1260a88a4f106d287bbbd997b))
+
+### Documentation
+
+- Sync version to v0.1.0 and update changelog [skip ci] ([787f9b](https://github.com/versenilvis/web-deck/commit/787f9bcbb5e0447a0a1e70ceecd3b049156d4ec9))
+
 ## [v0.1.0](https://github.com/versenilvis/web-deck/releases/tag/v0.1.0) - 2026-09-06
 
 ### Bug fixes
