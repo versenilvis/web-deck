@@ -106,9 +106,25 @@ ytd-app:has([fullscreen], [theater]):not(:has(:is(ytd-watch-flexy, ytd-watch-gri
 
     #contents.ytd-item-section-renderer {
       display: grid !important;
-      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)) !important;
+      grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
       gap: 1.25rem 1rem !important;
       width: 100% !important;
+
+      @media only screen and (min-width: 40rem) {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      @media only screen and (min-width: 60rem) {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      }
+
+      @media only screen and (min-width: 87.5rem) {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      }
+
+      @media only screen and (min-width: 106.25rem) {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+      }
     }
 
     yt-lockup-view-model .ytLockupViewModelHost,
