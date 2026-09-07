@@ -11,7 +11,7 @@
   display: none !important;
 }
 
-#chips-wrapper {
+[page-subtype="home"] #chips-wrapper {
   top: 0 !important;
 }
 

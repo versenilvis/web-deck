@@ -3,10 +3,6 @@ html,
 body,
 #container.ytd-searchbox,
 ytd-app,
-#page-header-container,
-#page-header,
-#tabs-container,
-#tabs-inner-container,
 #chips-wrapper,
 .navigation-container,
 #cinematic-shorts-scrim,
@@ -23,17 +19,10 @@ html, body {
   overflow-x: clip !important;
 }
 
-ytd-tabbed-page-header,
-#page-header-container,
-#header.ytd-two-column-browse-results-renderer {
-  position: static !important;
-}
-
 body::-webkit-scrollbar {
   display: none;
 }
 
-#tabs-divider,
 #short-video-container #cinematic-container,
 #frosted-glass {
   display: none !important;
