@@ -41,7 +41,3 @@ html.cb-fullscreen-toggling *,
 body.cb-fullscreen-toggling * {
   transition: none !important;
 }
-
-#page-manager {
-  contain: layout style !important;
-}

@@ -20,7 +20,13 @@ ytd-item-section-renderer[page-subtype="playlist"] #header.ytd-item-section-rend
 }
 
 html, body {
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
+}
+
+ytd-tabbed-page-header,
+#page-header-container,
+#header.ytd-two-column-browse-results-renderer {
+  position: static !important;
 }
 
 body::-webkit-scrollbar {
