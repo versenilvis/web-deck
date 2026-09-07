@@ -101,6 +101,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "docs(release): sync version to ${GITHUB_REF_NAME} and update changelog [skip ci]"
+            git commit -m "docs(changelog): ${GITHUB_REF_NAME}"
             git push origin main
           fi
