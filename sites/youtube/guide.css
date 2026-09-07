@@ -55,6 +55,12 @@ body:not(:has([mini-guide-visible=""])) {
   #guide-content,
   #guide-wrapper,
   tp-yt-app-drawer,
+  #tabsContent,
+  yt-tab-group-shape,
+  yt-tab-group-shape > [role="tablist"] {
+    width: fit-content !important;
+  }
+
   tp-yt-paper-item {
     padding: 0.125rem 0.625rem !important;
   }
@@ -64,8 +70,18 @@ body:not(:has([mini-guide-visible=""])) {
     margin: 0 !important;
   }
 
+  tp-yt-paper-tabs {
+    margin: auto 0 !important;
+  }
+
   #page-manager {
     margin-left: calc(var(--ytd-mini-guide-width, 4.5rem) - 1.25rem) !important;
+  }
+
+  #tabsContainer.tp-yt-paper-tabs {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
   }
 
   ytd-app:not([guide-persistent-and-visible=""]) tp-yt-app-drawer > #contentContainer {
