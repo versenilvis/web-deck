@@ -83,19 +83,16 @@ export async function getSettings(): Promise<Settings> {
     if (currentChat.height === '86vh') {
       currentChat.height = '68vh';
     }
-    if (current.sites?.['youtube.com']?.customCss?.includes('56, 189, 248')) {
-      current.sites['youtube.com'].customCss = '';
-    }
     if (current.github?.repo === 'versenilvis/chrome-beauty' || !current.github?.repo) {
       if (current.github) {
         current.github.repo = 'versenilvis/web-deck';
       }
     }
-    if (current.syncedModules?.['youtube.com']?.['transparency']) {
-      delete current.syncedModules['youtube.com']['transparency'];
+    if (current.syncedModules?.['youtube.com']) {
+      delete current.syncedModules['youtube.com'];
     }
-    if (current.syncedModules?.['youtube.com']?.['live-chat']) {
-      delete current.syncedModules['youtube.com']['live-chat'];
+    if (current.sites?.['youtube.com']?.customCss) {
+      current.sites['youtube.com'].customCss = '';
     }
     return {
       ...defaultSettings,
