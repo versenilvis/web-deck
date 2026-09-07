@@ -71,30 +71,8 @@ ytd-app:has([fullscreen], [theater]):not(:has(:is(ytd-watch-flexy, ytd-watch-gri
 
   #primary {
     width: 100% !important;
-    max-width: 100% !important;
     min-width: 0 !important;
-    padding: 0 1.5rem !important;
-    box-sizing: border-box !important;
     margin: 0 auto !important;
-  }
-
-  #primary-inner,
-  #below {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* normal video: inset description with side margins */
-  #description.ytd-watch-metadata {
-    width: auto !important;
-    margin: 0.5rem 3.5rem !important;
-  }
-
-  #description-inner,
-  ytd-text-inline-expander#description-inline-expander {
-    width: 100% !important;
-    max-width: 100% !important;
   }
 
   #secondary {
@@ -251,11 +229,3 @@ ytd-live-chat-frame,
   width: 0 !important;
 }
 
-/* live video: constrain description width so it pairs cleanly with the live chat panel */
-:is(ytd-watch-flexy, ytd-watch-grid)[theater]:has(ytd-live-chat-frame, [is-live], #chat:has(iframe)) {
-  #description.ytd-watch-metadata,
-  #description-inner,
-  ytd-text-inline-expander#description-inline-expander {
-    max-width: 57.5rem !important;
-  }
-}
