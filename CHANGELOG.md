@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented in this file.
 
+## [v0.1.2](https://github.com/versenilvis/web-deck/releases/tag/v0.1.2) - 2026-09-07
+
+### Documentation
+
+- Sync version to v0.1.1 and update changelog [skip ci] ([e4dbe2](https://github.com/versenilvis/web-deck/commit/e4dbe23fb33d70397267972525632a4c6ab9df30))
+
+### Refactors
+
+- Update github icon ([fbbb6e](https://github.com/versenilvis/web-deck/commit/fbbb6ec2e81bf6605de15458140059f8a934793e))
+
 ## [v0.1.1](https://github.com/versenilvis/web-deck/releases/tag/v0.1.1) - 2026-09-07
 
 ### Bug fixes
