@@ -88,8 +88,8 @@ export async function getSettings(): Promise<Settings> {
         current.github.repo = 'versenilvis/web-deck';
       }
     }
-    if (current.syncedModules?.['youtube.com']) {
-      delete current.syncedModules['youtube.com'];
+    if (current.syncedModules) {
+      current.syncedModules = {};
     }
     if (current.sites?.['youtube.com']?.customCss) {
       current.sites['youtube.com'].customCss = '';
