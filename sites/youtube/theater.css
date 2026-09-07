@@ -60,7 +60,8 @@ ytd-app:has([fullscreen], [theater]):not(:has(:is(ytd-watch-flexy, ytd-watch-gri
   }
 }
 
-:is(ytd-watch-flexy, ytd-watch-grid)[theater] {
+:is(ytd-watch-flexy, ytd-watch-grid)[theater],
+:is(ytd-watch-flexy, ytd-watch-grid):has(ytd-watch-metadata[is-theater-mode]) {
   position: relative !important;
 
   #columns {
@@ -71,8 +72,18 @@ ytd-app:has([fullscreen], [theater]):not(:has(:is(ytd-watch-flexy, ytd-watch-gri
 
   #primary {
     width: 100% !important;
+    max-width: var(--ytd-watch-flexy-max-player-width, 1280px) !important;
     min-width: 0 !important;
     margin: 0 auto !important;
+    padding: 0 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  #primary-inner,
+  #below {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   #secondary {
@@ -228,4 +239,3 @@ ytd-live-chat-frame,
 :is(ytd-watch-flexy, ytd-watch-grid)[theater]:not([fullscreen]) #panels-full-bleed-container {
   width: 0 !important;
 }
-

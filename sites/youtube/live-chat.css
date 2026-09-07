@@ -59,6 +59,20 @@ html {
   zoom: var(--cb-yt-chat-scale, 1);
 }
 
+/* live chat text outline and shadow for readability against video */
+#message.yt-live-chat-text-message-renderer,
+#author-name.yt-live-chat-author-chip,
+.yt-live-chat-text-message-renderer #message,
+.yt-live-chat-text-message-renderer #author-name,
+#timestamp.yt-live-chat-text-message-renderer {
+  text-shadow:
+    -0.5px -0.5px 0 rgba(0, 0, 0, 0.8),
+     0.5px -0.5px 0 rgba(0, 0, 0, 0.8),
+    -0.5px  0.5px 0 rgba(0, 0, 0, 0.8),
+     0.5px  0.5px 0 rgba(0, 0, 0, 0.8),
+     0 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
 html,
 body {
   overflow: hidden !important;

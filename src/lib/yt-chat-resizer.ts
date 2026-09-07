@@ -129,6 +129,19 @@ function injectHandles(target: HTMLElement) {
   dragHandle.addEventListener('mouseleave', onHandleLeave);
   container.appendChild(dragHandle);
 
+  // bottom drag handle to move chat window even if top is near navbar
+  const dragHandleBottom = document.createElement('div');
+  dragHandleBottom.className = 'cb-handle cb-drag-handle-bottom';
+  dragHandleBottom.title = 'Drag to move chat (Double-click to reset position)';
+  const pillBottom = document.createElement('div');
+  pillBottom.className = 'cb-drag-bar-pill';
+  dragHandleBottom.appendChild(pillBottom);
+  dragHandleBottom.addEventListener('pointerdown', (e) => onPointerDown(e, 'drag', 'move', target));
+  dragHandleBottom.addEventListener('dblclick', (e) => onResetDefault(e, target));
+  dragHandleBottom.addEventListener('mouseenter', onHandleEnter);
+  dragHandleBottom.addEventListener('mouseleave', onHandleLeave);
+  container.appendChild(dragHandleBottom);
+
   // 8-direction resize handles
   const handles = [
     { type: 'w', title: 'Drag edge to resize width' },
@@ -245,9 +258,9 @@ function onPointerMove(e: PointerEvent) {
     let nextLeft = startLeft + dx;
     let nextTop = startTop + dy;
 
-    // keep within reasonable boundaries
+    // keep within reasonable boundaries, keep top below navbar
     nextLeft = Math.max(0, Math.min(window.innerWidth - 60, nextLeft));
-    nextTop = Math.max(0, Math.min(document.documentElement.scrollHeight - 60, nextTop));
+    nextTop = Math.max(56, Math.min(document.documentElement.scrollHeight - 60, nextTop));
 
     currentLeft = Math.round(nextLeft);
     currentTop = Math.round(nextTop);

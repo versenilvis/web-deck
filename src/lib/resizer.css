@@ -45,8 +45,27 @@ body.cb-moving-active .cb-drag-bar-pill {
   opacity: 1;
 }
 
-.cb-drag-handle:hover .cb-drag-bar-pill {
+.cb-drag-handle:hover .cb-drag-bar-pill,
+.cb-drag-handle-bottom:hover .cb-drag-bar-pill {
   background: rgba(255, 255, 255, 0.5);
+}
+
+/* drag handle across bottom bar */
+.cb-drag-handle-bottom {
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2rem;
+  cursor: grab;
+  z-index: 100003;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.375rem;
+}
+
+.cb-drag-handle-bottom:active {
+  cursor: grabbing;
 }
 
 /* west edge resize handle */
