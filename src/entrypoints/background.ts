@@ -39,10 +39,6 @@ export default defineBackground(() => {
   // initial setup on browser start or extension install
   getSettings().then((settings) => {
     updateAlarm(settings);
-    // delay initial check slightly after boot
-    setTimeout(() => {
-      runBackgroundSync(false);
-    }, 4000);
   });
 
   // update alarm if settings change
