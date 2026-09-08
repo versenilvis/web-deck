@@ -1,11 +1,12 @@
-/* hardware acceleration for video player */
+/* hardware acceleration without breaking direct video overlay */
 #ytd-player,
 #movie_player,
-.html5-video-player,
+.html5-video-player {
+  contain: layout style !important;
+}
+
 .html5-main-video {
-  transform: translateZ(0) !important;
-  backface-visibility: hidden !important;
-  will-change: transform !important;
+  transform: none !important;
 }
 
 /* defer rendering of below-the-fold content until scrolled into view */

@@ -48,6 +48,20 @@ ytd-reel-item-renderer {
     overflow: hidden !important;
     border: none !important;
     outline: none !important;
+    scale: 1 !important;
+    transform-origin: center center !important;
+    transition: scale 0.25s ease, box-shadow 0.25s ease !important;
+  }
+
+  &:hover ytd-thumbnail {
+    scale: 1.25 !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85) !important;
+    transition: scale 0.35s cubic-bezier(0.2, 0.9, 0.3, 1) 0.6s, box-shadow 0.35s ease 0.6s !important;
+    z-index: 3000 !important;
+    position: relative !important;
+    border: none !important;
+    outline: none !important;
+    will-change: scale !important;
   }
 
   ytd-menu-renderer #button {
@@ -142,7 +156,6 @@ yt-lockup-view-model {
     scale: 1 !important;
     transform-origin: center center !important;
     transition: scale 0.25s ease, box-shadow 0.25s ease !important;
-    will-change: scale !important;
 
     .ytThumbnailViewModelImage,
     img.ytCoreImageHost {
@@ -160,6 +173,7 @@ yt-lockup-view-model {
     position: relative !important;
     border: none !important;
     outline: none !important;
+    will-change: scale !important;
   }
 }
 
@@ -207,7 +221,6 @@ ytd-video-preview {
   scale: 1 !important;
   transform-origin: center center !important;
   transition: scale 0.25s ease, box-shadow 0.25s ease !important;
-  will-change: scale !important;
   z-index: 3000 !important;
 
   &:hover {
@@ -216,15 +229,15 @@ ytd-video-preview {
     transition: scale 0.35s cubic-bezier(0.2, 0.9, 0.3, 1) 0.6s, box-shadow 0.35s ease 0.6s !important;
     border: none !important;
     outline: none !important;
+    will-change: scale !important;
   }
 }
 
-ytd-app:has(#video-preview-container:has(#inline-preview-player):hover) {
-  tp-yt-app-drawer,
-  ytd-mini-guide-renderer,
-  #guide-wrapper {
-    z-index: 1000 !important;
-  }
+/* ensure sidebar icons never overlap hovered preview without expensive root has */
+tp-yt-app-drawer:not([opened=""]),
+ytd-mini-guide-renderer,
+#guide-wrapper {
+  z-index: 1500 !important;
 }
 
 #contents ytd-rich-section-renderer,
