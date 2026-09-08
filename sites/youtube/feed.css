@@ -31,13 +31,28 @@ ytd-rich-item-renderer {
   }
 }
 
-ytd-rich-grid-media {
+ytd-rich-grid-media,
+ytd-grid-video-renderer,
+ytd-reel-item-renderer {
   border-radius: 1.2em;
   height: 100% !important;
 
+  #dismissible {
+    border-radius: 1.2em;
+    border: none !important;
+    outline: none !important;
+  }
+
+  ytd-thumbnail {
+    border-radius: 1.2em !important;
+    overflow: hidden !important;
+    border: none !important;
+    outline: none !important;
+  }
+
   ytd-menu-renderer #button {
     opacity: 0 !important;
-    transition: opacity 0.3s ease-in-out !important;
+    transition: opacity 0.25s ease-in-out !important;
   }
 
   &:hover ytd-menu-renderer #button {
@@ -45,32 +60,171 @@ ytd-rich-grid-media {
   }
 }
 
-#inline-preview-player {
-  transition: scale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s !important;
-  scale: 1 !important;
+/* remove native touch feedback shape, stroke borders and hover fills */
+yt-touch-feedback-shape,
+.ytSpecTouchFeedbackShapeHost,
+.ytSpecTouchFeedbackShapeStroke,
+.ytSpecTouchFeedbackShapeHoverEffect,
+.ytSpecTouchFeedbackShapeFill,
+.ytSpecTouchFeedbackShapeTouchResponse {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  border: none !important;
+  background: none !important;
 }
 
-#video-preview-container:has(#inline-preview-player) {
-  transition: scale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-  border-radius: 1.2em !important;
-  overflow: hidden !important;
-  scale: 1 !important;
+/* modern view-model cards (channel profile, home shelves and feed) */
+ytd-rich-item-renderer:has(yt-lockup-view-model),
+ytd-shelf-renderer:has(yt-lockup-view-model),
+yt-horizontal-list-renderer:has(yt-lockup-view-model) {
+  overflow: visible !important;
 
   &:hover {
-    scale: 1.25 !important;
-    box-shadow: #0008 0 0 3.75rem;
-    transition: scale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2s !important;
+    z-index: 2500 !important;
+    position: relative !important;
   }
 }
 
-ytd-app #content {
-  opacity: 1 !important;
-  transition: opacity 0.3s ease-in-out !important;
+yt-horizontal-list-renderer {
+  #scroll-outer-container,
+  #scroll-container,
+  #items {
+    overflow: visible !important;
+  }
 }
 
-ytd-app:has(#video-preview-container:hover) #content {
-  opacity: 0.5 !important;
-  transition: opacity 4s ease-in-out 1s !important;
+yt-lockup-view-model {
+  border-radius: 1.2em;
+  overflow: visible !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+
+  &:hover {
+    z-index: 2500 !important;
+    position: relative !important;
+  }
+
+  .ytLockupViewModelHost,
+  .ytLockupViewModelWrapper,
+  a.ytLockupViewModelContentImage {
+    overflow: visible !important;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .ytLockupMetadataViewModelMenuButton {
+    opacity: 0 !important;
+    transition: opacity 0.25s ease-in-out !important;
+  }
+
+  &:hover .ytLockupMetadataViewModelMenuButton {
+    opacity: 1 !important;
+  }
+
+  yt-thumbnail-view-model {
+    border-radius: 1.2em !important;
+    overflow: hidden !important;
+    border: none !important;
+    outline: none !important;
+    scale: 1 !important;
+    transform-origin: center center !important;
+    transition: scale 0.25s ease, box-shadow 0.25s ease !important;
+    will-change: scale !important;
+
+    .ytThumbnailViewModelImage,
+    img.ytCoreImageHost {
+      border-radius: 1.2em !important;
+      border: none !important;
+      outline: none !important;
+    }
+  }
+
+  &:hover yt-thumbnail-view-model {
+    scale: 1.25 !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85) !important;
+    transition: scale 0.35s cubic-bezier(0.2, 0.9, 0.3, 1) 0.6s, box-shadow 0.35s ease 0.6s !important;
+    z-index: 3000 !important;
+    position: relative !important;
+    border: none !important;
+    outline: none !important;
+  }
+}
+
+/* channel profile avatar */
+ytd-browse[page-subtype="channels"] {
+  #channel-header-container #avatar,
+  yt-page-header-renderer #avatar {
+    transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.25s ease !important;
+
+    &:hover {
+      transform: scale(1.05) !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+    }
+  }
+}
+
+ytd-thumbnail,
+ytd-thumbnail #thumbnail,
+ytd-thumbnail yt-image,
+ytd-thumbnail img {
+  border-radius: 1.2em !important;
+  border: none !important;
+  outline: none !important;
+}
+
+ytd-video-preview {
+  overflow: visible !important;
+  z-index: 3000 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+#inline-preview-player {
+  border-radius: 1.2em !important;
+  overflow: hidden !important;
+  border: none !important;
+  outline: none !important;
+}
+
+#video-preview-container:has(#inline-preview-player) {
+  border-radius: 1.2em !important;
+  overflow: hidden !important;
+  border: none !important;
+  outline: none !important;
+  scale: 1 !important;
+  transform-origin: center center !important;
+  transition: scale 0.25s ease, box-shadow 0.25s ease !important;
+  will-change: scale !important;
+  z-index: 3000 !important;
+
+  &:hover {
+    scale: 1.25 !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85) !important;
+    transition: scale 0.35s cubic-bezier(0.2, 0.9, 0.3, 1) 0.6s, box-shadow 0.35s ease 0.6s !important;
+    border: none !important;
+    outline: none !important;
+  }
+}
+
+ytd-app:has(#video-preview-container:has(#inline-preview-player):hover) {
+  tp-yt-app-drawer,
+  ytd-mini-guide-renderer,
+  #guide-wrapper {
+    z-index: 1000 !important;
+  }
 }
 
 #contents ytd-rich-section-renderer,
