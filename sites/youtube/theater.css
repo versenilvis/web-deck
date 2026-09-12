@@ -12,13 +12,13 @@
 }
 
 #masthead-container {
-  transition: opacity 0.25s ease, top 0.25s ease !important;
+  transition: opacity 0.2s ease, top 0.2s ease !important;
 }
 
-body:has([fullscreen], [theater]):not(:has(:is(ytd-watch-flexy, ytd-watch-grid)[hidden])) #masthead-container:not(:has(.ytSearchboxComponentInputBoxHasFocus)) {
+body:has([theater]:not([fullscreen])):not(:has(:is(ytd-watch-flexy, ytd-watch-grid)[hidden])) #masthead-container:not(:has(.ytSearchboxComponentInputBoxHasFocus)) {
   top: -2.5rem !important;
   opacity: 0 !important;
-  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+  transition: opacity 0.2s ease, top 0.2s ease !important;
   padding-bottom: 2.5rem !important;
 
   &:hover {
@@ -27,7 +27,7 @@ body:has([fullscreen], [theater]):not(:has(:is(ytd-watch-flexy, ytd-watch-grid)[
   }
 }
 
-ytd-app:has([fullscreen], [theater]):not(:has(:is(ytd-watch-flexy, ytd-watch-grid)[hidden])) {
+ytd-app:has([theater]:not([fullscreen])):not(:has(:is(ytd-watch-flexy, ytd-watch-grid)[hidden])) {
   --ytd-toolbar-height: 0 !important;
   --ytd-watch-flexy-masthead-height: 0 !important;
 
@@ -37,8 +37,15 @@ ytd-app:has([fullscreen], [theater]):not(:has(:is(ytd-watch-flexy, ytd-watch-gri
   }
 }
 
-:is(ytd-watch-flexy, ytd-watch-grid)[theater] ytd-comments {
-  transition: all 0.5s ease-in-out !important;
+/* instant hide masthead in fullscreen to prevent layout shifts */
+:fullscreen #masthead-container,
+[fullscreen] #masthead-container {
+  display: none !important;
+  transition: none !important;
+}
+
+:is(ytd-watch-flexy, ytd-watch-grid)[theater]:not([fullscreen]) ytd-comments {
+  transition: opacity 0.25s ease, left 0.25s ease !important;
   position: fixed !important;
   z-index: 1000 !important;
   top: 8vh !important;
@@ -58,6 +65,12 @@ ytd-app:has([fullscreen], [theater]):not(:has(:is(ytd-watch-flexy, ytd-watch-gri
     opacity: 1 !important;
     left: 0 !important;
   }
+}
+
+:is(ytd-watch-flexy, ytd-watch-grid)[fullscreen] ytd-comments,
+:fullscreen ytd-comments {
+  display: none !important;
+  transition: none !important;
 }
 
 :is(ytd-watch-flexy, ytd-watch-grid)[theater],

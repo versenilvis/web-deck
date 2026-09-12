@@ -5,6 +5,13 @@
   contain: layout style !important;
 }
 
+:fullscreen #movie_player,
+:fullscreen .html5-video-player,
+#movie_player:fullscreen,
+.html5-video-player:fullscreen {
+  contain: none !important;
+}
+
 .html5-main-video {
   transform: none !important;
 }
@@ -21,24 +28,18 @@ ytd-item-section-renderer[page-subtype="playlist"] #contents {
   contain-intrinsic-size: 50rem !important;
 }
 
-/* isolate and disable layout computation for off-screen elements in fullscreen */
-:fullscreen #masthead-container,
-:fullscreen #columns #secondary,
-:fullscreen #below,
-:fullscreen #comments,
-:fullscreen ytd-playlist-panel-renderer,
-ytd-watch-flexy[fullscreen] #columns #secondary,
-ytd-watch-flexy[fullscreen] #below,
-ytd-watch-flexy[fullscreen] #comments,
-ytd-watch-grid[fullscreen] #columns #secondary,
-ytd-watch-grid[fullscreen] #below,
-ytd-watch-grid[fullscreen] #comments {
-  contain: strict !important;
-  content-visibility: hidden !important;
-}
-
-/* disable any lingering transitions during fullscreen toggle for instant 60fps */
-html.cb-fullscreen-toggling *,
-body.cb-fullscreen-toggling * {
+/* suppress transitions on key layout containers during fullscreen toggle without global * style recalc */
+html.cb-fullscreen-toggling #masthead-container,
+html.cb-fullscreen-toggling #columns,
+html.cb-fullscreen-toggling #primary,
+html.cb-fullscreen-toggling #secondary,
+html.cb-fullscreen-toggling ytd-comments,
+html.cb-fullscreen-toggling #player-container,
+html.cb-fullscreen-toggling #full-bleed-container,
+[fullscreen] #masthead-container,
+[fullscreen] #columns,
+[fullscreen] #primary,
+[fullscreen] #secondary,
+[fullscreen] ytd-comments {
   transition: none !important;
 }

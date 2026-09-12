@@ -10,6 +10,15 @@ ytlr-player {
   background-color: #00000000 !important;
 }
 
+:fullscreen,
+:fullscreen #movie_player,
+:fullscreen .html5-video-player,
+:fullscreen .html5-main-video,
+#movie_player:fullscreen,
+.html5-video-player:fullscreen {
+  background-color: #000 !important;
+}
+
 #cinematics,
 #cinematics-container {
   display: none !important;
