@@ -8,6 +8,7 @@ import search from './search.css?raw';
 import player from './player.css?raw';
 import optimize from './optimize.css?raw';
 import liveChat from './live-chat.css?raw';
+import channelCard from './channel-card.css?raw';
 
 export const youtubeModules = {
   layout,
@@ -19,6 +20,7 @@ export const youtubeModules = {
   search,
   player,
   optimize,
+  channelCard,
 };
 
 export const youtubeCss = [
@@ -31,6 +33,7 @@ export const youtubeCss = [
   search,
   player,
   optimize,
+  channelCard,
 ].join('\n\n');
 
 export const youtubeLiveChatCss = liveChat;

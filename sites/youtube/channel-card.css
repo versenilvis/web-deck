@@ -1,0 +1,224 @@
+/* youtube channel hover badge styling */
+.cb-channel-card-popover {
+  position: fixed !important;
+  z-index: 9999999 !important;
+  width: 320px !important;
+  background: rgba(15, 15, 17, 0.95) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 1px rgba(255, 255, 255, 0.25) !important;
+  color: #fff !important;
+  font-family: Roboto, "Segoe UI", Arial, sans-serif !important;
+  overflow: hidden !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.98);
+  transition: opacity 0.14s ease, transform 0.14s ease, visibility 0.14s !important;
+  box-sizing: border-box !important;
+}
+
+.cb-channel-card-popover.cb-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
+  transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.18s !important;
+}
+
+.cb-card-banner {
+  height: 64px !important;
+  width: 100% !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.cb-card-body {
+  padding: 14px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+}
+
+.cb-card-top {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  margin-bottom: 10px !important;
+}
+
+.cb-card-avatar-wrap {
+  position: relative !important;
+}
+
+.cb-card-avatar {
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  background: #222 !important;
+  border: 2px solid rgba(255, 255, 255, 0.15) !important;
+  display: block !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.cb-card-banner + .cb-card-body .cb-card-avatar {
+  margin-top: -36px !important;
+  border: 3px solid #0f0f11 !important;
+}
+
+.cb-card-visit-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 32px !important;
+  padding: 0 14px !important;
+  border-radius: 16px !important;
+  background: #f1f1f1 !important;
+  color: #0f0f0f !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+  cursor: pointer !important;
+  border: none !important;
+}
+
+.cb-card-visit-btn:hover {
+  background: #ffffff !important;
+  transform: scale(1.03) !important;
+}
+
+.cb-card-title-group {
+  margin-bottom: 8px !important;
+}
+
+.cb-card-name-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.cb-card-name {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  line-height: 1.3 !important;
+}
+
+.cb-card-name:hover {
+  text-decoration: underline !important;
+}
+
+.cb-card-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #aaa !important;
+  flex-shrink: 0 !important;
+}
+
+.cb-card-badge svg {
+  width: 14px !important;
+  height: 14px !important;
+  fill: currentColor !important;
+}
+
+.cb-card-handle {
+  font-size: 13px !important;
+  color: #aaa !important;
+  display: block !important;
+  line-height: 1.4 !important;
+}
+
+.cb-card-stats {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 13px !important;
+  color: #aaa !important;
+  margin-bottom: 8px !important;
+  line-height: 1.4 !important;
+}
+
+.cb-card-stats-text {
+  color: #eee !important;
+  font-size: 13px !important;
+}
+
+.cb-card-bio {
+  font-size: 13px !important;
+  color: #ccc !important;
+  line-height: 1.45 !important;
+  margin: 0 0 10px 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  word-break: break-word !important;
+}
+
+.cb-card-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 12px !important;
+  color: #3ea6ff !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.cb-card-links:hover {
+  text-decoration: underline !important;
+}
+
+.cb-card-links svg {
+  width: 12px !important;
+  height: 12px !important;
+  fill: currentColor !important;
+  flex-shrink: 0 !important;
+}
+
+/* skeleton shimmer animation */
+@keyframes cb-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.cb-card-skeleton {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.05) 75%) !important;
+  background-size: 200% 100% !important;
+  animation: cb-shimmer 1.5s infinite !important;
+  border-radius: 4px !important;
+  display: inline-block !important;
+}
+
+.cb-card-skeleton-stats {
+  height: 14px !important;
+  width: 180px !important;
+}
+
+.cb-card-skeleton-bio-1 {
+  height: 13px !important;
+  width: 100% !important;
+  margin-bottom: 6px !important;
+}
+
+.cb-card-skeleton-bio-2 {
+  height: 13px !important;
+  width: 75% !important;
+}

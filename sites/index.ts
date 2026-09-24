@@ -43,6 +43,7 @@ export const siteModulesMeta: Record<string, ModuleItem[]> = {
     { id: 'search', label: 'Searchbox', description: 'Minimal glowing search bar', css: youtubeModules.search },
     { id: 'player', label: 'Player Controls', description: 'Floating glass controls and timestamps', css: youtubeModules.player },
     { id: 'optimize', label: 'Performance & Fast Player', description: 'Prioritize video player, defer comments/playlists, instant F fullscreen', css: youtubeModules.optimize },
+    { id: 'channelCard', label: 'Channel Hover Badge', description: 'Floating profile badge on channel hover', css: youtubeModules.channelCard },
   ],
   'github.com': [
     { id: 'glass', label: 'Glassmorphism', description: 'Subtle borders and frosted panels', css: githubModules.glass },

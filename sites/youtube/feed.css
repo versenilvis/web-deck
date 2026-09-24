@@ -64,6 +64,14 @@ ytd-reel-item-renderer {
     will-change: scale !important;
   }
 
+  /* prevent thumbnail zoom when hovering channel name or metadata */
+  &:has(#channel-name:hover, ytd-channel-name:hover, [class*="byline" i]:hover, a[href*="/@"]:hover, #avatar-link:hover, ytd-menu-renderer:hover) ytd-thumbnail {
+    scale: 1 !important;
+    box-shadow: none !important;
+    transition: scale 0.2s ease, box-shadow 0.2s ease !important;
+    z-index: 1 !important;
+  }
+
   ytd-menu-renderer #button {
     opacity: 0 !important;
     transition: opacity 0.25s ease-in-out !important;
@@ -174,6 +182,14 @@ yt-lockup-view-model {
     border: none !important;
     outline: none !important;
     will-change: scale !important;
+  }
+
+  /* prevent thumbnail zoom when hovering channel name or metadata */
+  &:has(#channel-name:hover, ytd-channel-name:hover, [class*="byline" i]:hover, a[href*="/@"]:hover, #avatar-link:hover, yt-lockup-metadata-view-model:hover) yt-thumbnail-view-model {
+    scale: 1 !important;
+    box-shadow: none !important;
+    transition: scale 0.2s ease, box-shadow 0.2s ease !important;
+    z-index: 1 !important;
   }
 }
 

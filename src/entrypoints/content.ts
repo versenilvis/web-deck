@@ -4,6 +4,7 @@ import { getSettings, getDomainConfig } from '../lib/storage';
 import { resolveDomain, getBuiltinCss } from '../lib/sites';
 import { setupYtChatResizer, removeYtChatResizer } from '../lib/yt-chat-resizer';
 import { setupYtOptimizer, removeYtOptimizer } from '../lib/yt-optimizer';
+import { setupYtChannelCard, removeYtChannelCard } from '../lib/yt-channel-card';
 import resizerCss from '../lib/resizer.css?raw';
 
 export default defineContentScript({
@@ -22,6 +23,7 @@ export default defineContentScript({
         removeElement('cb-resizer-style');
         removeYtChatResizer();
         removeYtOptimizer();
+        removeYtChannelCard();
         return;
       }
 
@@ -47,8 +49,10 @@ export default defineContentScript({
       if (domain === 'youtube.com') {
         if (siteConfig.enabled) {
           setupYtOptimizer();
+          setupYtChannelCard();
         } else {
           removeYtOptimizer();
+          removeYtChannelCard();
         }
 
         if (settings.ytChat.enabled) {
