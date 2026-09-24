@@ -2,6 +2,27 @@
 
 All notable changes to this project are documented in this file.
 
+## [v0.1.3](https://github.com/versenilvis/web-deck/releases/tag/v0.1.3) - 2026-09-24
+
+### Bug fixes
+
+- Remove black overlay and enhance previewer ([b994c0](https://github.com/versenilvis/web-deck/commit/b994c029b1317a9725e64269c05d48c4f0f4e366))
+- Constrain search suggestions width and truncate long text ([3b3ba5](https://github.com/versenilvis/web-deck/commit/3b3ba5d6ff1f6146394c8cd5f66b3eff32f9380e))
+- Refine search suggestions truncation and thumbnail size ([57135f](https://github.com/versenilvis/web-deck/commit/57135ff1bcdbcb7d74e8f95b14745521cd37bd68))
+
+### Features
+
+- Add channel hover badge and fix thumbnail zoom on channel hover ([b8eee1](https://github.com/versenilvis/web-deck/commit/b8eee1ead6b2d757108d9dba6a1dd2a241d2655a))
+
+### Performance
+
+- Optimize css loading ([ffc516](https://github.com/versenilvis/web-deck/commit/ffc5160ad1202f18e43401558ebe5adfb952a0e7))
+- Optimize fullscreen toggle and fix black flickering ([a5adb9](https://github.com/versenilvis/web-deck/commit/a5adb9645226f17adde86d2aa6778b3593629dd2))
+
+### Styling
+
+- Make searchbox more compact in header and focused states ([239430](https://github.com/versenilvis/web-deck/commit/23943014d19340b29932741f04d1adb2859c260d))
+
 ## [v0.1.2](https://github.com/versenilvis/web-deck/releases/tag/v0.1.2) - 2026-09-07
 
 ### Documentation
