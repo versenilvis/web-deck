@@ -42,69 +42,12 @@ yt-searchbox:has(.ytSearchboxComponentInputBoxHasFocus) {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;
     border-radius: 1.5em !important;
+    overflow: hidden !important;
     margin-top: 0.625rem !important;
 
     @media only screen and (min-width: 87.5rem) {
       margin-top: 1.875rem !important;
-    }
-  }
-}
-
-/* truncate search suggestions with ellipsis and constrain dropdown width */
-#i0,
-[role="listbox"]:has([role="option"]),
-.ytSearchboxComponentSuggestionsContainer {
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-  overflow: hidden !important;
-}
-
-#i0 [role="option"],
-#i0 li,
-[role="listbox"] [role="option"],
-.ytSearchboxComponentSuggestionItem {
-  display: flex !important;
-  align-items: center !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  box-sizing: border-box !important;
-  overflow: hidden !important;
-
-  & > yt-icon,
-  & > svg,
-  & > [class*="icon" i] {
-    flex-shrink: 0 !important;
-  }
-
-  & > button,
-  & > [role="button"] {
-    flex-shrink: 0 !important;
-    margin-left: auto !important;
-  }
-
-  & > :not(yt-icon):not(button):not(svg):not([role="button"]):not([class*="icon" i]),
-  [class*="suggestion-text" i],
-  [class*="SuggestionText" i],
-  [class*="query" i],
-  .sbl1,
-  .sbqs_c,
-  yt-formatted-string {
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-
-    span,
-    b,
-    strong {
-      display: inline !important;
-      white-space: nowrap !important;
     }
   }
 }
@@ -123,3 +66,91 @@ yt-searchbox:has(.ytSearchboxComponentInputBoxHasFocus) {
   scale: 1.05 !important;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.35) !important;
 }
+
+/* search suggestion dropdown constraint and ellipsis */
+#i0 {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  border-radius: 1.5em !important;
+}
+
+.ytSuggestionComponentSuggestion {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+.ytSuggestionComponentText {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.ytSuggestionComponentIcon {
+  flex-shrink: 0 !important;
+}
+
+.ytSuggestionComponentLeftContainer {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.ytSuggestionComponentLeftContainer [role="button"] {
+  display: block !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.ytSuggestionComponentLeftContainer [role="button"] span {
+  display: inline !important;
+  white-space: inherit !important;
+}
+
+.ytSuggestionComponentRightContainer {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+  gap: 0.5rem !important;
+  padding-right: 0.75rem !important;
+}
+
+.ytSuggestionComponentThumbnailContainer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  width: 64px !important;
+  height: 36px !important;
+  overflow: hidden !important;
+  border-radius: 6px !important;
+}
+
+.ytSuggestionComponentThumbnailContainer:not(:has(img)) {
+  display: none !important;
+}
+
+.ytSuggestionComponentVisualSuggestThumbnail {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: inherit !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+
+.ytSuggestionComponentRemoveLinkClearButton {
+  flex-shrink: 0 !important;
+}
+
+
