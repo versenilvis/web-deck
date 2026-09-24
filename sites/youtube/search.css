@@ -8,6 +8,8 @@ yt-searchbox {
 
 .ytSearchboxComponentInputBox {
   border-radius: 2em !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 yt-searchbox:has(.ytSearchboxComponentInputBoxHasFocus) {
@@ -15,6 +17,7 @@ yt-searchbox:has(.ytSearchboxComponentInputBoxHasFocus) {
   left: 0vw !important;
   top: -30vh !important;
   height: 2.5rem !important;
+  width: 100% !important;
   max-width: 37.5rem !important;
   scale: 1 !important;
 
@@ -36,10 +39,72 @@ yt-searchbox:has(.ytSearchboxComponentInputBoxHasFocus) {
   }
 
   #i0 {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-radius: 1.5em !important;
     margin-top: 0.625rem !important;
 
     @media only screen and (min-width: 87.5rem) {
       margin-top: 1.875rem !important;
+    }
+  }
+}
+
+/* truncate search suggestions with ellipsis and constrain dropdown width */
+#i0,
+[role="listbox"]:has([role="option"]),
+.ytSearchboxComponentSuggestionsContainer {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+#i0 [role="option"],
+#i0 li,
+[role="listbox"] [role="option"],
+.ytSearchboxComponentSuggestionItem {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+
+  & > yt-icon,
+  & > svg,
+  & > [class*="icon" i] {
+    flex-shrink: 0 !important;
+  }
+
+  & > button,
+  & > [role="button"] {
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+  }
+
+  & > :not(yt-icon):not(button):not(svg):not([role="button"]):not([class*="icon" i]),
+  [class*="suggestion-text" i],
+  [class*="SuggestionText" i],
+  [class*="query" i],
+  .sbl1,
+  .sbqs_c,
+  yt-formatted-string {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+
+    span,
+    b,
+    strong {
+      display: inline !important;
+      white-space: nowrap !important;
     }
   }
 }
